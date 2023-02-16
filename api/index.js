@@ -11,12 +11,14 @@ const cors = require('cors');
 const app = express(router);
 
 app.use(cors);
+app.use(router);
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-
+console.log('test test test');
+mongoose.set('strictQuery', true);
 mongoose
   .connect(
     'mongodb+srv://spektree1:BegginingMeepCityDos2@cluster0.tpyi0wq.mongodb.net/?retryWrites=true&w=majority',
@@ -25,7 +27,10 @@ mongoose
       useUnifiedTopology: true,
     }
   )
-  .then((res) => app.listen(3001))
+  .then((res) => {
+    app.listen(3001);
+  })
+  .then((res) => console.log('done'))
   .catch((err) => console.log(err));
 
 //rl.question('smdn \n', (response) => {
