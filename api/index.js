@@ -18,21 +18,23 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 console.log('test test test');
+
 mongoose.set('strictQuery', true);
+
 mongoose
   .connect(
-    'mongodb+srv://spektree1:BegginingMeepCityDos2@cluster0.tpyi0wq.mongodb.net/?retryWrites=true&w=majority',
+    'mongodb+srv://spektree1:BegginingMoogCityDos2@cluster0.tpyi0wq.mongodb.net/?retryWrites=true&w=majority',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }
   )
-  .then((res) => {
+  .then(() => {
     app.listen(3001);
+    console.log('listening');
   })
-  .then((res) => console.log('done'))
   .catch((err) => console.log(err));
-
+console.log('test again');
 //rl.question('smdn \n', (response) => {
 // console.log(`smdn ${response}`);
 //});
