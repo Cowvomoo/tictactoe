@@ -8,9 +8,10 @@ const mongo = require('mongo');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-const app = express(router);
+const app = express();
 
-app.use(cors);
+app.use(express.json());
+app.use(cors());
 app.use(router);
 
 const rl = readline.createInterface({
@@ -23,17 +24,12 @@ mongoose.set('strictQuery', true);
 
 mongoose
   .connect(
-    'mongodb+srv://spektree1:BegginingMoogCityDos2@cluster0.tpyi0wq.mongodb.net/?retryWrites=true&w=majority',
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
+    'mongodb+srv://spektree1:BegginingMoogCityDos2@cluster0.tpyi0wq.mongodb.net/Tictactoe?retryWrites=true&w=majority',
+    { useNewUrlParser: true, useUnifiedTopology: true }
   )
-  .then(() => {
-    app.listen(3001);
-    console.log('listening');
-  })
-  .catch((err) => console.log(err));
+  .then(app.listen(3001))
+  .catch((err) => console.error(err));
+
 console.log('test again');
 //rl.question('smdn \n', (response) => {
 // console.log(`smdn ${response}`);

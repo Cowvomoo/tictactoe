@@ -8,6 +8,7 @@ function App() {
   const [board, setBoard] = useState(0);
 
   const doThing = () => {
+    setBoard(board + 1);
     fetch(API + '/lobby/create')
       .then((res) => res.json())
       .then((data) => setBoard(data))

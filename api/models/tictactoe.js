@@ -18,14 +18,10 @@ const mongoose = require('mongoose');
 const lobbySchema = new mongoose.Schema({
   board: {
     default: {
-      row1: [null, null, null],
-      row2: [null, null, null],
-      row3: [null, null, null],
+      row1: ['none', 'none', 'none'],
+      row2: ['none', 'none', 'none'],
+      row3: ['none', 'none', 'none'],
     },
-  },
-  id: {
-    type: String,
-    required: true,
   },
   players: {
     type: Array,
