@@ -1,12 +1,16 @@
 // hola
 const readline = require('readline');
 
+const router = require('./routes/main.js');
+
 const express = require('express');
 const mongo = require('mongo');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-const app = express();
+const app = express(router);
+
+app.use(cors);
 
 const rl = readline.createInterface({
   input: process.stdin,

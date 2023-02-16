@@ -1,21 +1,21 @@
 const mongoose = require('mongoose');
 
-const boardSchema = new Schema({
-  row1: {
-    type: Array,
-    default: [null, null, null],
-  },
-  row2: {
-    type: Array,
-    default: [null, null, null],
-  },
-  row3: {
-    type: Array,
-    default: [null, null, null],
-  },
-});
+// const boardSchema = new Schema({
+//   row1: {
+//     type: Array,
+//     default: [null, null, null],
+//   },
+//   row2: {
+//     type: Array,
+//     default: [null, null, null],
+//   },
+//   row3: {
+//     type: Array,
+//     default: [null, null, null],
+//   },
+// });
 
-const lobbySchema = new Schema({
+const lobbySchema = new mongoose.Schema({
   board: {
     default: {
       row1: [null, null, null],
@@ -33,7 +33,7 @@ const lobbySchema = new Schema({
   },
 });
 
-exports.board = mongoose.model('board', boardSchema);
+//exports.board = mongoose.model('board', boardSchema);
 
 exports.lobby = mongoose.model('lobby', lobbySchema);
 
